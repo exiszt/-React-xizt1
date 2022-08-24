@@ -7,6 +7,10 @@
   pointer-events: none;
 }
 
+.App-logo-nav {
+  height: 10vmin;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -32,7 +36,58 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.Navbar-Contenedor {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+}
+
+.Links {
+  width: 30vw;
+}
+
+.Links ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.Links ul li {
+  display: flex;
+  list-style: none;
+
+}
+
+.Links ul li a {
+  text-decoration: none;
+  color: white;
+  transition: all .5s ease;
+}
+
+.Links ul li a:hover {
+  color: deepskyblue;
+}
+
+.Caja-Boton{
+  display: flex;
+  align-items: center;
+}
+
+.Boton {
+  background-color: #282c34;
+  padding: 1em 2em 1em 2em;
+  color: white;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+.Boton:hover {
+  cursor: pointer;
+  background-color: deepskyblue;
 }
