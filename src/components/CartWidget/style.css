@@ -1,0 +1,23 @@
+.contenedor-general {
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-carrito {
+    display: flex;
+    align-items: center;
+    background: #282c34;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.contenedor-carrito:hover{
+    background-color: deepskyblue;
+}
+
+.carrito {
+    height: 45px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+}

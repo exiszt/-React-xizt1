@@ -50,9 +50,13 @@
 
 .Links {
   width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Links ul {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0;
@@ -61,7 +65,6 @@
 .Links ul li {
   display: flex;
   list-style: none;
-
 }
 
 .Links ul li a {

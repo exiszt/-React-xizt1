@@ -1,4 +1,5 @@
-import logo from '../xizt.svg'
+import logo from '../../xizt.svg'
+import CartWidget from '../CartWidget'
 
 const NavBar = () => {
     return (
@@ -15,6 +16,7 @@ const NavBar = () => {
             <div className="Caja-Boton">
                 <button className="Boton">Ingresa</button>
             </div>
+                <CartWidget />
         </div>
     )
 }
