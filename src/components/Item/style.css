@@ -1,0 +1,10 @@
+.Items{
+    background: #282c34;
+    border: 1px solid deepskyblue;
+    width: 30%;
+    transition: all ease .5s;
+}
+
+.Items:hover{
+    background: black;
+}

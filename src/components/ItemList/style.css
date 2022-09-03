@@ -1,5 +1,5 @@
-.contador{
+.Item-Caja{
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    margin-top: 10px;
 }
