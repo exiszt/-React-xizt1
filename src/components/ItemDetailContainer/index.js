@@ -1,9 +1,8 @@
-// import Boton from "../Boton"
 import data from "../mockdata"
 import { useEffect, useState } from "react"
-import ItemList from "../ItemList"
+import ItemDetail from "../ItemDetail"
 
-const ItemListContainer = () =>{
+const ItemDetailContainer = () =>{
 
     const [productList, setProductList] = useState ([])
 
@@ -18,16 +17,12 @@ const ItemListContainer = () =>{
                 resolve(data)
             }, 2000);
         })
-    
-    // const funcionClick = () =>{
-    //     alert('Saludos cordiales.')
-    // }
 
     return (
         <div className="contenedor-ilc">
-            <ItemList lista={productList}/>
+            <ItemDetail lista={productList}/>
         </div>
     )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer

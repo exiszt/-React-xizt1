@@ -2,7 +2,7 @@ import ItemCount from '../ItemCount'
 import './style.css'
 
 
-const Item = ({titulo, precio, imagen}) =>{
+const Item = ({titulo, precio, imagen, descripcion}) =>{
 
     const stock = 10
 
@@ -10,8 +10,9 @@ const Item = ({titulo, precio, imagen}) =>{
         <div className="Items">
             <p>{titulo}</p>
             <img width="250" height="250" src={imagen} alt={titulo}/>
+            {/* <p>{descripcion}</p> */}
             <h5>${precio}</h5>
-            <ItemCount stock={stock}/>
+            {/* <ItemCount stock={stock}/> */}
         </div>
     )
 }

@@ -1,20 +1,20 @@
-import Item from "../Item"
-import './style.css'
+import Detail from "../Detail"
 
-const ItemList = ({ lista }) => {
+const ItemDetail = ({ lista }) => {
     return (
-        <div className="Item-Caja">
-            {lista.map((product) => (
-                <Item
+        <>
+            {lista.slice(0, 1).map((product) => (
+                <Detail
                     key={product.id}
                     titulo={product.titulo}
                     precio={product.precio}
                     descripcion={product.descripcion}
                     imagen={product.imagen}
+                    vendidos={product.vendidos}
                 />
             ))}
-        </div>
+        </>
     )
 }
 
-export default ItemList
+export default ItemDetail
