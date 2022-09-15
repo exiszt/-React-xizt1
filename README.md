@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-Proyecto de e-commerce ficticio para el curso de React de Coderhouse.
+:ledger: "XIZT" es un proyecto de e-commerce ficticio para el curso de React de Coderhouse.
 
 Consiste en una librería cristiana que cuenta con una tienda online (biblias estándar, biblias de estudio y libros cristianos).
 
