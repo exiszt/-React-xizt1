@@ -1,9 +1,10 @@
 # Getting Started with Create React App
 
 Proyecto de e-commerce ficticio para el curso de React de Coderhouse.
-Consiste en una librería cristiana que cuenta con una tienda online.
 
-Video de navegación entre categorías y el detalle de los productos:
+Consiste en una librería cristiana que cuenta con una tienda online (biblias estándar, biblias de estudio y libros cristianos).
+
+Video de navegación entre categorías y detalle de los productos:
 
 https://user-images.githubusercontent.com/104798755/190511345-a35fcb99-9314-42db-b7bc-a168ce79bc25.mp4
 
