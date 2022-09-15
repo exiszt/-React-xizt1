@@ -1,19 +1,24 @@
-import Detail from "../Detail"
+import ItemCount from '../ItemCount'
+import './style.css'
 
-const ItemDetail = ({ lista }) => {
+const onAdd = (count) => {
+    console.log('To Do add ' + count + ' items to cart')
+}
+
+const ItemDetail = ({ item }) => {
     return (
-        <>
-            {lista.slice(0, 1).map((product) => (
-                <Detail
-                    key={product.id}
-                    titulo={product.titulo}
-                    precio={product.precio}
-                    descripcion={product.descripcion}
-                    imagen={product.imagen}
-                    vendidos={product.vendidos}
-                />
-            ))}
-        </>
+        <div className="mainContent">
+            <div className='cardClick'>
+                <img src={item.imagen} className='imagenClick' alt={item.descripcion} />
+            </div>
+            <div className='contentDetailClick'>
+                <h2>{item.titulo}</h2>
+                <p className="precio"> {"$" + item.precio} </p>
+                <p className="descripcion"> {item.descripcion} </p>
+                <ItemCount initial={1} onAdd={onAdd} stock={item.stock} className="contador" />
+                <button className="comprar">Comprar</button>
+            </div>
+        </div>
     )
 }
 

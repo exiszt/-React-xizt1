@@ -1,27 +1,34 @@
-import data from "../mockdata"
+import products from "../mockData"
+import ItemDetail from "../../components/ItemDetail"
 import { useEffect, useState } from "react"
-import ItemDetail from "../ItemDetail"
+import { useParams } from "react-router-dom"
+import './style.css'
 
-const ItemDetailContainer = () =>{
+const ItemDetailContainer = () => {
+    const [item, setItem] = useState({})
+    const { idProd } = useParams()
+    const idProdNumber = Number(idProd)
 
-    const [productList, setProductList] = useState ([])
+    useEffect(() => {
+        const getProduct = () =>
+            new Promise((res, rej) => {
+                const filterProducts = products.find(
+                    (product) => product.id === idProdNumber
+                )
+                setTimeout(() => res(idProdNumber ? filterProducts : null), 500)
+            })
 
-    useEffect(() =>{
-        getProducts.then((response) =>{
-            setProductList(response)
-        })
-    }, [])
-
-    const getProducts = new Promise ((resolve, reject) => {
-            setTimeout(() => {
-                resolve(data)
-            }, 2000);
-        })
+        getProduct()
+            .then(data => setItem(data))
+            .catch(error => console.log(error))
+    }, [idProdNumber])
 
     return (
-        <div className="contenedor-ilc">
-            <ItemDetail lista={productList}/>
-        </div>
+        <>
+            <section className='containerCards'>
+                <ItemDetail item={item} />
+            </section>
+        </>
     )
 }
 

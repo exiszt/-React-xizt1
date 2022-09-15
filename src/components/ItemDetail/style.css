@@ -1,0 +1,64 @@
+.mainContent{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: white
+}
+
+.cardClick{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagenClick{
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #222222;
+    margin: 5px;
+}
+
+.contentDetailClick{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    text-align: center;
+    background: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px 3px #222222;
+    margin: 5px;
+}
+
+.precio{
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.descripcion{
+    margin-top: 10px;
+}
+
+.contador{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comprar{
+    margin-top: 10px;
+    background: #212121;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+}
+
+.contentDetailClick h2{
+    border-bottom: 1px solid black;
+}

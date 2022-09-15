@@ -1,19 +1,13 @@
+import React from "react"
 import Item from "../Item"
-import './style.css'
 
-const ItemList = ({ lista }) => {
-    return (
-        <div className="Item-Caja">
-            {lista.map((product) => (
-                <Item
-                    key={product.id}
-                    titulo={product.titulo}
-                    precio={product.precio}
-                    descripcion={product.descripcion}
-                    imagen={product.imagen}
-                />
-            ))}
-        </div>
+const ItemList = ( { items } ) => {
+    return( 
+        items.map((item) => {
+            return (
+                <Item key={ item.id } item={ item } />
+            )
+        })  
     )
 }
 

@@ -1,10 +1,48 @@
-.Items{
-    background: #282c34;
-    border: 1px solid deepskyblue;
-    width: 30%;
-    transition: all ease .5s;
+.containerCards {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
-.Items:hover{
-    background: black;
+.card {
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px grey;
+    margin: 20px;
+}
+
+.card img {
+    width: 300px;
+    border-radius: 2px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.content h2 {
+    border-bottom: 1px solid black;
+    color: black;
+    margin: 10px;
+    font-weight: 600;
+}
+
+.content p {
+    color: black;
+    font-weight: 700;
+}
+
+.verMas{
+    margin: 10px 0;
+    background: #212121;
+    color: white;
+    padding: 5px 20px;
+    cursor: pointer;
 }

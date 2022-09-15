@@ -1,5 +1,14 @@
-.contador{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.restarSumar{
+    background: #212121;
+    color: white;
+    padding: 2px 5px 2px 5px;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.unidades{
+    font-size: 12px;
+    margin-top: 10px;
+    background: rgb(211, 211, 211);
+    padding: 5px 10px;
 }

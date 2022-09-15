@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -48,32 +54,36 @@
   background-color: black;
 }
 
-.Links {
+.NavLinks {
   width: 30vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.Links ul {
+.NavLinks ul {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0;
 }
 
-.Links ul li {
+.NavLinks ul li {
   display: flex;
   list-style: none;
 }
 
-.Links ul li a {
+.NavLinks ul li a {
   text-decoration: none;
   color: white;
   transition: all .5s ease;
 }
 
-.Links ul li a:hover {
+.NavLinks ul li a:hover {
+  color: deepskyblue;
+}
+
+.NavLinks ul li a:active{
   color: deepskyblue;
 }
 

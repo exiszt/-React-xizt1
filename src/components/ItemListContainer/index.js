@@ -1,33 +1,33 @@
-// import Boton from "../Boton"
-import data from "../mockdata"
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import products from "../mockData"
 import ItemList from "../ItemList"
 
-const ItemListContainer = () =>{
+const ItemListContainer = () => {
+  const [items, setItems] = useState([])
+  const { categoryName } = useParams()
 
-    const [productList, setProductList] = useState ([])
-
-    useEffect(() =>{
-        getProducts.then((response) =>{
-            setProductList(response)
-        })
-    }, [])
-
-    const getProducts = new Promise ((resolve, reject) => {
-            setTimeout(() => {
-                resolve(data)
-            }, 2000);
-        })
-    
-    // const funcionClick = () =>{
-    //     alert('Saludos cordiales.')
-    // }
-
-    return (
-        <div className="contenedor-ilc">
-            <ItemList lista={productList}/>
-        </div>
-    )
+  useEffect(() => {
+      const getProducts  = () => 
+          new Promise((res, rej) => {
+              const filterProducts = products.filter(
+                  (product) => product.categoria === categoryName
+              )
+              setTimeout(() => res(categoryName ? filterProducts : products), 500)
+          })
+      
+      getProducts()
+          .then(data => setItems(data))
+          .catch(error => console.log(error))
+  }, [categoryName])
+  
+  return (
+      <>
+              <section className='containerCards'>
+                  <ItemList items={ items } />
+              </section>
+      </>
+  )
 }
 
 export default ItemListContainer

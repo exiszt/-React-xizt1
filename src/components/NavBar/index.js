@@ -1,22 +1,46 @@
 import logo from '../../xizt.svg'
 import CartWidget from '../CartWidget'
+import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
     return (
         <div className="Navbar-Contenedor">
-            <img src={logo} className="App-logo-nav" alt="logo" />
-            <div className="Links">
+            <NavLink to={'/'}>
+                <img src={logo} className="App-logo-nav" alt="logo" />
+            </NavLink>
+            <div className="NavLinks">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Sección 1</a></li>
-                    <li><a href="#">Sección 2</a></li>
-                    <li><a href="#">Sección 3</a></li>
+                    <li>
+                        <NavLink
+                        to={'/'}
+                        >
+                            Inicio
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                        to={'/categoria/biblias'}
+                        >
+                            Biblias (estándar)
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink 
+                        to={'/categoria/bibliasdeestudio'}
+                        >
+                            Biblias (estudio)
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink 
+                        to={'/categoria/libros'}
+                        >
+                            Libros
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
-            <div className="Caja-Boton">
-                <button className="Boton">Ingresa</button>
-            </div>
-                <CartWidget />
+            <CartWidget />
         </div>
     )
 }
