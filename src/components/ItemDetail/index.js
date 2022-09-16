@@ -7,11 +7,11 @@ const onAdd = (count) => {
 
 const ItemDetail = ({ item }) => {
     return (
-        <div className="mainContent">
+        <div className="contGeneral">
             <div className='cardClick'>
                 <img src={item.imagen} className='imagenClick' alt={item.descripcion} />
             </div>
-            <div className='contentDetailClick'>
+            <div className='contDetalleClick'>
                 <h2>{item.titulo}</h2>
                 <p className="precio"> {"$" + item.precio} </p>
                 <p className="descripcion"> {item.descripcion} </p>

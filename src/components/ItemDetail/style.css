@@ -1,4 +1,4 @@
-.mainContent{
+.contGeneral{
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -20,7 +20,7 @@
     margin: 5px;
 }
 
-.contentDetailClick{
+.contDetalleClick{
     width: 40%;
     display: flex;
     justify-content: center;
