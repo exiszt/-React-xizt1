@@ -5,9 +5,10 @@ import './style.css'
 
 const ItemDetail = ({ item }) => {
     const [cantidad, setCantidad] = useState(0)
+    const [count, setCount] = useState(1)
 
     const onAdd = (count) => {
-        setCantidad (count)
+        setCantidad(count)
         console.log(count + ' producto/s añadido/s al carrito')
     }
 
@@ -22,22 +23,21 @@ const ItemDetail = ({ item }) => {
                 <p className="descripcion"> {item.descripcion} </p>
 
                 {cantidad === 0 ? (
-                    <ItemCount initial={1} onAdd={onAdd} stock={item.stock} className="contador" />
-                ):(
+                    <ItemCount initial={1} onAdd={onAdd} stock={item.stock} setCount={setCount} count={count} className="contador" />
+                ) : (
                     <div>
-                        <p>{cantidad} productos añadidos al carrito.</p>
+                        <p className="productoAgregado">{count} producto/s añadido/s al carrito</p>
                         <Link to="/cart">
-                            <button className="agregarComprar">
+                            <button className="agregar">
                                 Confirmar compra
                             </button>
                         </Link>
                         <Link to="/">
-                            <p className='inicio'>Volver al inicio.</p>
+                            <p className='inicio'>Volver al inicio</p>
                         </Link>
+                        
                     </div>
                 )}
-
-                <button className="comprar">Comprar</button>
             </div>
         </div>
     )
