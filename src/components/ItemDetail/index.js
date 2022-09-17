@@ -2,7 +2,7 @@ import ItemCount from '../ItemCount'
 import './style.css'
 
 const onAdd = (count) => {
-    console.log('To Do add ' + count + ' items to cart')
+    console.log(count + ' producto/s añadido/s al carrito')
 }
 
 const ItemDetail = ({ item }) => {
