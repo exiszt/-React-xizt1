@@ -53,12 +53,22 @@
 
 .comprar{
     margin-top: 10px;
-    background: #212121;
+    background: deepskyblue;
     color: white;
+    border: none;
     padding: 5px 10px 5px 10px;
     cursor: pointer;
 }
 
 .contentDetailClick h2{
     border-bottom: 1px solid black;
+}
+
+.inicio{
+    text-decoration: none;
+    color: grey;
+}
+
+.inicio:hover{
+    color: deepskyblue;
 }

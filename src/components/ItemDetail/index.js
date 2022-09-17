@@ -1,11 +1,16 @@
 import ItemCount from '../ItemCount'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './style.css'
 
-const onAdd = (count) => {
-    console.log(count + ' producto/s añadido/s al carrito')
-}
-
 const ItemDetail = ({ item }) => {
+    const [cantidad, setCantidad] = useState(0)
+
+    const onAdd = (count) => {
+        setCantidad (count)
+        console.log(count + ' producto/s añadido/s al carrito')
+    }
+
     return (
         <div className="contGeneral">
             <div className='cardClick'>
@@ -15,7 +20,23 @@ const ItemDetail = ({ item }) => {
                 <h2>{item.titulo}</h2>
                 <p className="precio"> {"$" + item.precio} </p>
                 <p className="descripcion"> {item.descripcion} </p>
-                <ItemCount initial={1} onAdd={onAdd} stock={item.stock} className="contador" />
+
+                {cantidad === 0 ? (
+                    <ItemCount initial={1} onAdd={onAdd} stock={item.stock} className="contador" />
+                ):(
+                    <div>
+                        <p>{cantidad} productos añadidos al carrito.</p>
+                        <Link to="/cart">
+                            <button className="agregarComprar">
+                                Confirmar compra
+                            </button>
+                        </Link>
+                        <Link to="/">
+                            <p className='inicio'>Volver al inicio.</p>
+                        </Link>
+                    </div>
+                )}
+
                 <button className="comprar">Comprar</button>
             </div>
         </div>
