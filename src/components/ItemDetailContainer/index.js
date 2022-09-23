@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            <section className='contCards'>
+            <section className="contCards">
                 <ItemDetail item={item} />
             </section>
         </>

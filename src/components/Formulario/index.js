@@ -37,7 +37,6 @@ const Formulario = () => {
                     onChange={handleChange}
                 />
                 <button>Enviar</button>
-                <p>Cart en desarrollo.</p>
             </form>
         </div>
     )

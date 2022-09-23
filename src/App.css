@@ -87,11 +87,6 @@
   color: deepskyblue;
 }
 
-.Caja-Boton{
-  display: flex;
-  align-items: center;
-}
-
 .Boton {
   background-color: #282c34;
   padding: 1em 2em 1em 2em;

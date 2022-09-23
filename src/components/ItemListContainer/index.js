@@ -23,7 +23,7 @@ const ItemListContainer = () => {
   
   return (
       <>
-              <section className='contCards'>
+              <section className="contCards">
                   <ItemList items={ items } />
               </section>
       </>

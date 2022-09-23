@@ -1,41 +1,45 @@
 import ItemCount from '../ItemCount'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 import './style.css'
 
 const ItemDetail = ({ item }) => {
-    const [cantidad, setCantidad] = useState(0)
+    const [quantity, setQuantity] = useState(0)
     const [count, setCount] = useState(1)
+    const {addToCart} = useContext(CartContext)
 
-    const onAdd = (count) => {
-        setCantidad(count)
-        console.log(count + ' producto/s añadido/s al carrito')
+    const onAdd = (quantity) => {
+        setQuantity(quantity)
+        addToCart({...item, quantity: quantity})
+        console.log(quantity + " unidad/es de " + item.titulo + " añadida/s al carrito")
     }
 
     return (
         <div className="contGeneral">
-            <div className='cardClick'>
-                <img src={item.imagen} className='imagenClick' alt={item.descripcion} />
+            <div className="cardClick">
+                <img src={item.imagen} className="imagenClick" alt={item.descripcion} />
             </div>
-            <div className='contDetalleClick'>
+            <div className="contDetalleClick">
                 <h2>{item.titulo}</h2>
                 <p className="precio"> {"$" + item.precio} </p>
                 <p className="descripcion"> {item.descripcion} </p>
 
-                {cantidad === 0 ? (
+                {quantity === 0 ? (
                     <ItemCount initial={1} onAdd={onAdd} stock={item.stock} setCount={setCount} count={count} className="contador" />
                 ) : (
                     <div>
                         <p className="productoAgregado">{count} producto/s añadido/s al carrito</p>
-                        <Link to="/cart">
-                            <button className="agregar">
-                                Confirmar compra
+                        <Link to="/">
+                            <button className="botonInicioCart">
+                                Volver al inicio
                             </button>
                         </Link>
-                        <Link to="/">
-                            <p className='inicio'>Volver al inicio</p>
-                        </Link>
-                        
+                        <Link to="/cart">
+                            <button className="botonInicioCart">
+                                Ir al Cart
+                            </button>
+                        </Link> 
                     </div>
                 )}
             </div>

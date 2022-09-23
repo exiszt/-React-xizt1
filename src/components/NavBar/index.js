@@ -12,35 +12,38 @@ const NavBar = () => {
                 <ul>
                     <li>
                         <NavLink
-                        to={'/'}
+                            to={'/'}
                         >
                             Inicio
                         </NavLink>
                     </li>
                     <li>
                         <NavLink
-                        to={'/categoria/biblias'}
+                            to={'/categoria/biblias'}
                         >
                             Biblias (estándar)
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink 
-                        to={'/categoria/bibliasdeestudio'}
+                        <NavLink
+                            to={'/categoria/bibliasdeestudio'}
                         >
                             Biblias (estudio)
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink 
-                        to={'/categoria/libros'}
+                        <NavLink
+                            to={'/categoria/libros'}
                         >
                             Libros
                         </NavLink>
                     </li>
                 </ul>
             </div>
-            <CartWidget />
+            <NavLink to={'/cart'}>
+                <CartWidget />
+            </NavLink>
+
         </div>
     )
 }

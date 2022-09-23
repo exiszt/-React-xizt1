@@ -17,7 +17,7 @@ const ItemCount = ({ count, setCount, stock, onAdd }) => {
                 <span><button className="restarSumar" onClick={sumar}>+</button></span>
             </div>
             <button
-                className="agregar"
+                className="botonInicioCart"
                 onClick={() => onAdd(count)}
                 disabled={count <= 0}>
                 Agregar al carrito
