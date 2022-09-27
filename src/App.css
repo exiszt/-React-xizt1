@@ -86,16 +86,3 @@
 .NavLinks ul li a:active{
   color: deepskyblue;
 }
-
-.Boton {
-  background-color: #282c34;
-  padding: 1em 2em 1em 2em;
-  color: white;
-  cursor: pointer;
-  transition: all .5s ease;
-}
-
-.Boton:hover {
-  cursor: pointer;
-  background-color: deepskyblue;
-}

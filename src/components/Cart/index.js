@@ -9,6 +9,19 @@ const Cart = () => {
     const { cart, clearCart, deleteProduct, totalPrice } = useContext(CartContext)
     console.log(cart)
 
+    if (cart.length === 0){
+        return(
+            <div>
+                <h2 className="cartTitulo">Tu carrito está vacío</h2>
+                <Link to="/">
+                    <button className="cartBoton verProductos">
+                        Ver productos
+                    </button>
+                </Link>
+            </div>
+        )
+    }
+
     return (
         <div>
             <h2 className="cartTitulo">Productos en el carrito</h2>

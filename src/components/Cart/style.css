@@ -71,3 +71,11 @@
     justify-content: left;
     margin: 25px 0 25px 100px;
 }
+
+.verProductos{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 25px 0 25px 100px;
+    background: #212121;
+}

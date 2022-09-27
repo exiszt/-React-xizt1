@@ -7,11 +7,11 @@ import './style.css'
 const ItemDetail = ({ item }) => {
     const [quantity, setQuantity] = useState(0)
     const [count, setCount] = useState(1)
-    const {addToCart} = useContext(CartContext)
+    const { addToCart, qnty } = useContext(CartContext)
 
     const onAdd = (quantity) => {
         setQuantity(quantity)
-        addToCart({...item, quantity: quantity})
+        addToCart({ ...item, quantity: quantity })
         console.log(quantity + " unidad/es de " + item.titulo + " añadida/s al carrito")
     }
 
@@ -26,10 +26,18 @@ const ItemDetail = ({ item }) => {
                 <p className="descripcion"> {item.descripcion} </p>
 
                 {quantity === 0 ? (
-                    <ItemCount initial={1} onAdd={onAdd} stock={item.stock} setCount={setCount} count={count} className="contador" />
+                    <>
+
+                        {qnty(item.id) > 0
+                            ? <p>Hay {qnty(item.id)} en tu carrito</p>
+                            : ''
+                        }
+                            <ItemCount initial={ qnty(item.id) === 0 ? 1 : qnty(item.id)} onAdd={onAdd} stock={item.stock} setCount={setCount} count={count} className="contador" />
+                    </>
+
                 ) : (
                     <div>
-                        <p className="productoAgregado">{count} producto/s añadido/s al carrito</p>
+                        <p className="productoAgregado">{quantity} producto/s añadido/s al carrito</p>
                         <Link to="/">
                             <button className="botonInicioCart">
                                 Volver al inicio
@@ -39,7 +47,7 @@ const ItemDetail = ({ item }) => {
                             <button className="botonInicioCart">
                                 Ir al Cart
                             </button>
-                        </Link> 
+                        </Link>
                     </div>
                 )}
             </div>
