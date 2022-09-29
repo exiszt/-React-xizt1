@@ -1,30 +1,80 @@
 import './style.css'
+import { useState } from "react"
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
-const ItemCount = ({ count, setCount, stock, onAdd }) => {
-    const sumar = () => count < stock && setCount(count + 1)
-    const restar = () => count > 0 && setCount(count - 1)
+function ItemCount({ stock, onAdd }) {
+  const [quantity, setCantidad] = useState(0)
 
-    return (
+  const sumar = () => {
+    if (stock) {
+      if ((stock - quantity) != 0) {
+        setCantidad(quantity + 1)
+      } else {
+        return
+      }
+    } else {
+      Toastify({
+        text: ("Máximo de stock disponible"),
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "red",
+        },
+        onClick: function () { }
+      }).showToast()
+    }
+  }
+
+  const restar = () => quantity > 0
+    ? setCantidad(quantity - 1)
+    : Toastify({
+      text: ("Seleccione una cantidad mayor a 0 (cero)"),
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "red",
+      },
+      onClick: function () { }
+    }).showToast()
+
+  const confirmar = () => {
+    if (quantity === 0) {
+      return
+    } else {
+      onAdd(quantity)
+    }
+  }
+
+  return (
+    <div>
+      <div>
+        <p className="unidades">{stock} unidades</p>
+      </div>
+      <div className="contador">
+        <span><button className="restarSumar" onClick={restar}>-</button></span>
         <div>
-            <div>
-                <p className="unidades">{stock} unidades</p>
-            </div>
-            <div className="contador">
-                <span><button className="restarSumar" onClick={restar}>-</button></span>
-                <div>
-                    <p>{count}</p>
-                </div>
-                <span><button className="restarSumar" onClick={sumar}>+</button></span>
-            </div>
-            <button
-                className="botonInicioCart"
-                onClick={() => onAdd(count)}
-                disabled={count <= 0}
-                >
-                Agregar al carrito
-            </button>
+          <p>{quantity}</p>
         </div>
-    )
+        <span><button className="restarSumar" onClick={sumar}>+</button></span>
+      </div>
+      <button
+        className="botonInicioCart"
+        onClick={confirmar}>
+        Agregar a carrito
+      </button>
+    </div>
+  )
 }
 
 export default ItemCount

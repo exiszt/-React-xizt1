@@ -1,55 +1,53 @@
-import ItemCount from '../ItemCount'
-import { useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
-import { CartContext } from '../../context/CartContext'
+import ItemCount from "../ItemCount"
+import { useState, useContext, useEffect } from "react"
+import { Link } from "react-router-dom"
+import { CartContext } from "../../context/CartContext"
 import './style.css'
 
-const ItemDetail = ({ item }) => {
-    const [quantity, setQuantity] = useState(0)
-    const [count, setCount] = useState(1)
-    const { addToCart, qnty } = useContext(CartContext)
+const ItemDetail = ({ producto }) => {
+
+    const [count, setCount] = useState(0)
+    const [load, setLoad] = useState(false)
+    const [show, setShow] = useState(false)
+    const { addQuantity } = useContext(CartContext)
+
+    useEffect(() => {
+        setTimeout(() => {
+            count != 0 && addQuantity(producto, count, (producto.stock - count))
+        }, 1000)
+    }, [load])
 
     const onAdd = (quantity) => {
-        setQuantity(quantity)
-        addToCart({ ...item, quantity: quantity })
-        console.log(quantity + " unidad/es de " + item.titulo + " añadida/s al carrito")
+        setCount(quantity)
+        setShow(true)
+        load
+        ? setLoad(false)
+        : setLoad(true)
     }
 
     return (
         <div className="contGeneral">
             <div className="cardClick">
-                <img src={item.imagen} className="imagenClick" alt={item.descripcion} />
-            </div>
-            <div className="contDetalleClick">
-                <h2>{item.titulo}</h2>
-                <p className="precio"> {"$" + item.precio} </p>
-                <p className="descripcion"> {item.descripcion} </p>
-
-                {quantity === 0 ? (
-                    <>
-
-                        {qnty(item.id) > 0
-                            ? <p>Hay {qnty(item.id)} en tu carrito</p>
-                            : ''
-                        }
-                            <ItemCount initial={ qnty(item.id) === 0 ? 1 : qnty(item.id)} onAdd={onAdd} stock={item.stock} setCount={setCount} count={count} className="contador" />
-                    </>
-
-                ) : (
-                    <div>
-                        <p className="productoAgregado">{quantity} producto/s añadido/s al carrito</p>
-                        <Link to="/">
+                <img src={producto.imagen} className="imagenClick" alt={producto.titulo} />
+                <div className="contDetalleClick">
+                    <h2>{producto.titulo}</h2>
+                    <p className="precio"> {"$" + producto.precio} </p>
+                    <p className="descripcion"> {producto.descripcion} </p>
+                    {!show && <ItemCount stock={producto.stock - count} onAdd={onAdd} className="contador" />}
+                    {show && <div>
+                        <Link to={'/'}>
                             <button className="botonInicioCart">
                                 Volver al inicio
                             </button>
                         </Link>
-                        <Link to="/cart">
+                        <Link to={'/cart'}>
                             <button className="botonInicioCart">
                                 Ir al Cart
                             </button>
                         </Link>
-                    </div>
-                )}
+                        <button onClick={() => { setShow(false) }} className="botonInicioCart">Agregar más</button>
+                    </div>}
+                </div>
             </div>
         </div>
     )

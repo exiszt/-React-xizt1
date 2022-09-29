@@ -1,8 +1,12 @@
-import logo from '../../xizt.svg'
-import CartWidget from '../CartWidget'
-import { NavLink } from 'react-router-dom'
+import logo from './xizt.svg'
+import CartWidget from "../CartWidget"
+import { NavLink } from "react-router-dom"
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
 
-const NavBar = () => {
+const NavBar = (props) => {
+    const { cart } = useContext(CartContext)
+
     return (
         <div className="Navbar-Contenedor">
             <NavLink to={'/'}>
@@ -19,28 +23,28 @@ const NavBar = () => {
                     </li>
                     <li>
                         <NavLink
-                            to={'/categoria/biblias'}
+                            to={`/categoria/biblias`}
                         >
                             Biblias (estándar)
                         </NavLink>
                     </li>
                     <li>
                         <NavLink
-                            to={'/categoria/bibliasdeestudio'}
+                            to={`/categoria/bibliasdeestudio`}
                         >
                             Biblias (estudio)
                         </NavLink>
                     </li>
                     <li>
                         <NavLink
-                            to={'/categoria/libros'}
+                            to={`/categoria/libros`}
                         >
                             Libros
                         </NavLink>
                     </li>
                 </ul>
             </div>
-            <NavLink to={'/cart'}>
+            <NavLink to={`/cart`}>
                 <CartWidget />
             </NavLink>
 

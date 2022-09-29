@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { CartContext } from "../../context/CartContext"
 import { Link } from "react-router-dom"
 import './style.css'
@@ -6,51 +6,68 @@ import './style.css'
 
 const Cart = () => {
 
-    const { cart, clearCart, deleteProduct, totalPrice } = useContext(CartContext)
-    console.log(cart)
+  const { cart, clearCart, deleteProduct } = useContext(CartContext)
+  const [total, setTotal] = useState(0)
+  const [update, setUpdate] = useState(false)
 
-    if (cart.length === 0){
-        return(
-            <div>
-                <h2 className="cartTitulo">Tu carrito está vacío</h2>
-                <Link to="/">
-                    <button className="cartBoton verProductos">
-                        Ver productos
-                    </button>
-                </Link>
-            </div>
+  useEffect(() => {
+    setTotal((cart.reduce((acc, prod) => acc + prod.precio * prod.quantity, 0)))
+  }, [update])
+
+  const deleteCartItem = (id) => {
+    deleteProduct(id)
+    !update
+    ? setUpdate(true)
+    : setUpdate(false)
+  }
+
+  const deleteCart = () => {
+    clearCart()
+    !update
+    ? setUpdate(true)
+    : setUpdate(false)
+  }
+
+  return (
+
+    <div>
+      <h2 className="cartTitulo">Cart</h2>
+
+      {cart.map((item) => (
+        <section key={item.id} className="cartSubTitles" >
+          <div className="cartMiniatura">
+            <img src={item.imagen} alt={item.titulo} className="cartMiniaturaImg" />
+            <h2 className="cartMiniaturaTitulo">{item.titulo}</h2>
+          </div>
+          <span className="cartDatosCompra">${item.precio} x {item.quantity} unidad/es</span>
+          <span className="cartDatosCompra cartSubtotal">${item.precio * item.quantity}</span>
+          <button className="cartBoton eliminarProducto" onClick={() =>
+            deleteCartItem(item.id)}>
+            Quitar producto
+          </button>
+        </section>
+      ))}
+      {cart.length === 0
+        ?
+        (
+          <div>
+            <h2>No hay productos en tu carrito</h2>
+          </div>
         )
-    }
 
-    return (
+        :
         <div>
-            <h2 className="cartTitulo">Productos en el carrito</h2>
-
-            {cart.map((product) => (
-                <section key={product.id} className="cartSubTitles">
-                    <div className="cartMiniatura">
-                        <img src={product.imagen} className="cartMiniaturaImg" />
-                        <h2 className="cartMiniaturaTitulo">{product.titulo}</h2>
-                    </div>
-                    <span className="cartDatosCompra">${product.precio} x {product.quantity} unidad/es</span>
-                    <span className="cartDatosCompra cartSubtotal">${product.precio * product.quantity}</span>
-                    <button className="cartBoton eliminarProducto" onClick={() =>
-                        deleteProduct(product.id)}>
-                        Quitar producto
-                    </button>
-                </section>
-            ))}
-                <section>
-                    <h2 className="cartTitulo">Total: ${totalPrice()}</h2>
-                    <button onClick={clearCart} className="cartBoton eliminarCart">Eliminar cart</button>
-                    <Link to={'/formulario'}>
-                        <button className="cartBoton confirmarCompra">
-                            Confirmar compra
-                        </button>
-                    </Link>
-                </section>
+          <h2 className="cartTitulo">Total: ${total}</h2>
+          <button className="cartBoton eliminarCart" onClick={deleteCart}>Elminar Cart</button>
+          <Link to={'/formulario'}>
+            <button className="cartBoton confirmarCompra">
+              Confirmar compra
+            </button>
+          </Link>
         </div>
-    )
+      }
+    </div>
+  )
 }
 
 export default Cart
