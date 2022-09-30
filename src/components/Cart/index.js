@@ -11,7 +11,7 @@ const Cart = () => {
   const [update, setUpdate] = useState(false)
 
   useEffect(() => {
-    setTotal((cart.reduce((acc, prod) => acc + prod.precio * prod.quantity, 0)))
+    setTotal((cart.reduce((acc, prod) => acc + prod.price * prod.quantity, 0)))
   }, [update])
 
   const deleteCartItem = (id) => {
@@ -36,11 +36,11 @@ const Cart = () => {
       {cart.map((item) => (
         <section key={item.id} className="cartSubTitles" >
           <div className="cartMiniatura">
-            <img src={item.imagen} alt={item.titulo} className="cartMiniaturaImg" />
-            <h2 className="cartMiniaturaTitulo">{item.titulo}</h2>
+            <img src={item.image} alt={item.title} className="cartMiniaturaImg" />
+            <h2 className="cartMiniaturaTitulo">{item.title}</h2>
           </div>
-          <span className="cartDatosCompra">${item.precio} x {item.quantity} unidad/es</span>
-          <span className="cartDatosCompra cartSubtotal">${item.precio * item.quantity}</span>
+          <span className="cartDatosCompra">${item.price} x {item.quantity} unidad/es</span>
+          <span className="cartDatosCompra cartSubtotal">${item.price * item.quantity}</span>
           <button className="cartBoton eliminarProducto" onClick={() =>
             deleteCartItem(item.id)}>
             Quitar producto

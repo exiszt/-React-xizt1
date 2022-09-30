@@ -28,11 +28,11 @@ const ItemDetail = ({ producto }) => {
     return (
         <div className="contGeneral">
             <div className="cardClick">
-                <img src={producto.imagen} className="imagenClick" alt={producto.titulo} />
+                <img src={producto.image} className="imagenClick" alt={producto.title} />
                 <div className="contDetalleClick">
-                    <h2>{producto.titulo}</h2>
-                    <p className="precio"> {"$" + producto.precio} </p>
-                    <p className="descripcion"> {producto.descripcion} </p>
+                    <h2>{producto.title}</h2>
+                    <p className="precio"> {"$" + producto.price} </p>
+                    <p className="descripcion"> {producto.description} </p>
                     {!show && <ItemCount stock={producto.stock - count} onAdd={onAdd} className="contador" />}
                     {show && <div>
                         <Link to={'/'}>
