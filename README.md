@@ -1,80 +1,39 @@
-# Proyecto React
 
-## :computer: "XIZT" es un proyecto de e-commerce ficticio para el curso de React de Coderhouse.
+# XIZT Librería
 
-## :ledger: Consiste en una librería cristiana que cuenta con una tienda online (biblias estándar, biblias de estudio y libros cristianos).
+![xizt](https://user-images.githubusercontent.com/104798755/196374202-82481657-ca63-4f3d-8b31-e5d8fad00811.png)
 
-## :point_right: Video de navegación entre categorías y detalle de los productos:
+[![Descripcion](https://img.shields.io/badge/descripcion-000000.svg?style=for-the-badge&logo=github&logoColor=white)](#)
+
+Este es un emprendimiento ficticio para el curso de React de Coderhouse.  Consiste en la tienda online de una librería cristiana (biblias estándar, biblias de estudio y libros cristianos). El objetivo es que el proyecto cumpla con las funciones propias de un e-commerce (mostrar los productos disponibles, navegar por categorías, ver el detalle de los productos, añadir productos al carrito, realizar una compra).
+
+<br/>
+
+[![Demos](https://img.shields.io/badge/demos-000000.svg?style=for-the-badge&logo=github&logoColor=white)](#)
+
+Navegación entre categorías y detalle de los productos
 
 https://user-images.githubusercontent.com/104798755/190511345-a35fcb99-9314-42db-b7bc-a168ce79bc25.mp4
 
-# Getting Started with Create React App
+Simulación de compra
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://user-images.githubusercontent.com/104798755/196386868-af405242-9763-4baa-952c-8df4e88e896e.mp4
 
-## Available Scripts
+## Creado con
 
-In the project directory, you can run:
+[![HTML](https://img.shields.io/badge/html-000000.svg?style=for-the-badge&logo=html5&logoColor=white)](#)
+<br/>
+[![JavaScript](https://img.shields.io/badge/javascript-000000.svg?style=for-the-badge&logo=javascript&logoColor=white)](#)
+<br/>
+[![React](https://img.shields.io/badge/react-000000.svg?style=for-the-badge&logo=react&logoColor=white)](#)
 
-### `npm start`
+## Recursos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[![Toastify](https://img.shields.io/badge/toastify-000000.svg?style=for-the-badge&logo=github&logoColor=white)](https://www.npmjs.com/package/toastify-js)
+<br/>
+[![Moment](https://img.shields.io/badge/moment-000000.svg?style=for-the-badge&logo=github&logoColor=white)](https://www.npmjs.com/package/moment/v/2.29.4)
+<br/>
+[![Firebase](https://img.shields.io/badge/firebase-000000.svg?style=for-the-badge&logo=github&logoColor=white)](https://firebase.google.com)
+<br/>
+[![React-Spinners](https://img.shields.io/badge/React_Spinners-000000?style=for-the-badge&logo=github&logoColor=white)](https://www.npmjs.com/package/react-spinners)
+<br/>
