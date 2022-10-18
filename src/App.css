@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body{
+  background: white;
 }
 
 .App {
@@ -24,7 +31,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -48,10 +55,10 @@
   }
 }
 
-.Navbar-Contenedor {
+.navBarContenedor {
   display: flex;
   justify-content: space-around;
-  background-color: black;
+  background: #0c0c0c;
 }
 
 .NavLinks {
@@ -80,9 +87,5 @@
 }
 
 .NavLinks ul li a:hover {
-  color: deepskyblue;
-}
-
-.NavLinks ul li a:active{
-  color: deepskyblue;
+  color: #00c3ff;
 }

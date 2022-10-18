@@ -1,4 +1,4 @@
-import logo from './xizt.svg'
+import logo from "./xizt.svg"
 import CartWidget from "../CartWidget"
 import { NavLink } from "react-router-dom"
 import { useContext } from "react"
@@ -8,7 +8,7 @@ const NavBar = (props) => {
     const { cart } = useContext(CartContext)
 
     return (
-        <div className="Navbar-Contenedor">
+        <div className="navBarContenedor">
             <NavLink to={'/'}>
                 <img src={logo} className="App-logo-nav" alt="logo" />
             </NavLink>
@@ -47,7 +47,6 @@ const NavBar = (props) => {
             <NavLink to={`/cart`}>
                 <CartWidget />
             </NavLink>
-
         </div>
     )
 }

@@ -33,12 +33,12 @@
 }
 
 .cartSubtotal {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .cartBoton{
     padding: 10px 20px;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 0.9rem;
     border: none;
     cursor: pointer;
@@ -61,7 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    background: deepskyblue;
+    background: #00c3ff;
     margin: 25px 0;
 }
 

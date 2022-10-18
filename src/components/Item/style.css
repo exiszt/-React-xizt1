@@ -1,15 +1,6 @@
-.contCards {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
 .card {
     width: 30%;
-    border-radius: 10px;
+    background: white;
     box-shadow: 3px 3px 5px grey;
     margin: 20px;
 }
@@ -27,22 +18,27 @@
     padding-bottom: 10px;
 }
 
-.contenido p {
-    color: black;
-    font-weight: 700;
+.precioItem {
+    color: #0c0c0c;
+    font-weight: 800;
 }
 
-.titulo {
-    border-bottom: 1px solid black;
-    color: black;
+.tituloItem {
+    width: 90%;
+    border-bottom: 1px solid #bdbdbd;
+    color: #0c0c0c;
     margin: 10px;
+    font-size: 1.1rem;
     font-weight: 600;
+    text-align: center;
 }
 
 .verMas{
     margin: 10px 0;
-    background: #212121;
+    background: #0c0c0c;
     color: white;
-    padding: 5px 20px;
+    border: none;
+    font-weight: 600;
+    padding: 10px 20px;
     cursor: pointer;
 }

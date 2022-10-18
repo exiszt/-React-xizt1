@@ -1,5 +1,5 @@
 import { SyncLoader } from "react-spinners"
-import './style.css'
+import "./style.css"
 
 const Loader = () =>{
     return(

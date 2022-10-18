@@ -1,11 +1,3 @@
-.restarSumar{
-    background: #212121;
-    color: white;
-    padding: 2px 5px 2px 5px;
-    border-radius: 0;
-    cursor: pointer;
-}
-
 .unidades{
     font-size: 12px;
     margin-top: 10px;
@@ -13,11 +5,26 @@
     padding: 5px 10px;
 }
 
-.botonInicioCart{
-    margin: 10px;
+.contador{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.restarSumar{
+    background: #212121;
+    color: white;
+    padding: 2px 5px 2px 5px;
+    cursor: pointer;
+}
+
+.botonAgregar{
+    margin: 10px 0;
     background: #121212;
     color: white;
+    font-weight: 600;
     border: none;
-    padding: 5px 10px 5px 10px;
+    padding: 15px 20px;
     cursor: pointer;
 }

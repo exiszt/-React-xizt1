@@ -1,6 +1,6 @@
-import './style.css'
+import "./style.css"
 import { useState } from "react"
-import Toastify from 'toastify-js'
+import Toastify from "toastify-js"
 import "toastify-js/src/toastify.css"
 
 function ItemCount({ stock, onAdd }) {
@@ -58,9 +58,7 @@ function ItemCount({ stock, onAdd }) {
 
   return (
     <div>
-      <div>
         <p className="unidades">{stock} unidades</p>
-      </div>
       <div className="contador">
         <span><button className="restarSumar" onClick={restar}>-</button></span>
         <div>
@@ -69,9 +67,9 @@ function ItemCount({ stock, onAdd }) {
         <span><button className="restarSumar" onClick={sumar}>+</button></span>
       </div>
       <button
-        className="botonInicioCart"
+        className="botonAgregar"
         onClick={confirmar}>
-        Agregar a carrito
+        Agregar al carrito
       </button>
     </div>
   )

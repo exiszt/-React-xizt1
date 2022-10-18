@@ -1,12 +1,11 @@
 import { useContext, useEffect, useState } from "react"
 import { CartContext } from "../../context/CartContext"
 import { Link, useNavigate } from "react-router-dom"
-import { collection, addDoc, getFirestore, updateDoc, doc } from 'firebase/firestore'
+import { collection, addDoc, getFirestore, updateDoc, doc } from "firebase/firestore"
 import moment from "moment/moment"
-import Toastify from 'toastify-js'
+import Toastify from "toastify-js"
 import "toastify-js/src/toastify.css"
-import './style.css'
-// import Formulario from "../Formulario"
+import "./style.css"
 
 const Cart = () => {
   const { cart, clearCart, deleteProduct } = useContext(CartContext)
@@ -21,6 +20,9 @@ const Cart = () => {
   })
 
   const createOrder = () => {
+
+    // Datos de la orden de compra
+
     const order = {
       buyer: {
         name: `${users.name}`,
@@ -31,7 +33,9 @@ const Cart = () => {
       total: cart.reduce((oldValue, currentValue) => oldValue + (currentValue.price * currentValue.quantity), 0),
       date: moment().format()
     }
+
     // Búsqueda de la colección "orders" en database
+
     const query = collection(db, 'orders')
     addDoc(query, order)
       .then(({ id }) => {
@@ -47,7 +51,7 @@ const Cart = () => {
           position: "right",
           stopOnFocus: true,
           style: {
-            background: "deepskyblue",
+            background: "#00c3ff",
           },
           onClick: function () { }
         }).showToast()
@@ -71,9 +75,11 @@ const Cart = () => {
       )
   }
 
+  // Actualizar la colección "items" en database
+
   const updateStockProducts = () => {
     cart.forEach(product => {
-      const queryUpdate = doc(db, 'items', product.id);
+      const queryUpdate = doc(db, 'items', product.id)
       updateDoc(queryUpdate, {
         category: product.category,
         description: product.description,
@@ -84,19 +90,21 @@ const Cart = () => {
       })
         .then(() => {
           if (cart[cart.length - 1].id === product.id) {
-            deleteCart();
-            navigate('/');
+            deleteCart()
+            navigate('/')
           }
         })
         .catch(() => {
-          console.log('Error al actualizar stock');
+          console.log('Error al actualizar stock')
         })
-    });
+    })
   }
 
   useEffect(() => {
     setTotal((cart.reduce((acc, prod) => acc + prod.price * prod.quantity, 0)))
   }, [update])
+
+  // Eliminar producto del cart
 
   const deleteCartItem = (id) => {
     deleteProduct(id)
@@ -105,12 +113,16 @@ const Cart = () => {
       : setUpdate(false)
   }
 
+  // Eliminar todos los productos del carrito
+
   const deleteCart = () => {
     clearCart()
     !update
       ? setUpdate(true)
       : setUpdate(false)
   }
+
+  // Validación de datos ingresados en el formulario
 
   const confirm = (event) => {
     event.preventDefault()
@@ -135,22 +147,22 @@ const Cart = () => {
     }
   }
 
-  const handleChange = (event) => {
-    const { target } = event;
-    const { name, value } = target;
+  // Réplica el estado, reemplazo del valor del input y sincronización de estado
 
+  const handleChange = (event) => {
+    const { target } = event
+    const { name, value } = target
     const newValues = {
       ...users,
       [name]: value,
-    };
-    setUsers(newValues);
+    }
+    setUsers(newValues)
   }
 
   return (
 
     <div>
       <h1 className="cartTitulo">Cart</h1>
-
       {cart.map((item) => (
         <section key={item.id} className="cartSubTitles" >
           <div className="cartMiniatura">
@@ -175,7 +187,6 @@ const Cart = () => {
             </Link>
           </div>
         )
-
         :
         <div>
           <h2 className="cartTitulo">Total: ${total}</h2>
@@ -184,7 +195,7 @@ const Cart = () => {
             <h2 className="cartTitulo">Finalizar compra</h2>
           </div>
           <form className="contFormulario" onSubmit={confirm}>
-            <section className="formulario">
+            <section>
               <div>
                 <input
                   id="name"
